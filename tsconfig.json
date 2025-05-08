@@ -1,0 +1,35 @@
+{
+   "compilerOptions": {
+      "target": "ES2020",
+      "module": "commonjs",
+      "strict": true,
+      "esModuleInterop": true,
+      "outDir": "dist",
+      "rootDir": "src",
+      "skipLibCheck": true,
+      "baseUrl": "./",
+      "paths": {
+         "@/*": [
+            "./*"
+         ],
+         "@src/*": [
+            "./src/*"
+         ],
+         "@dist/*": [
+            "./dist/*"
+         ],
+         "@application/*": [
+            "./src/application/*"
+         ],
+         "@domain/*": [
+            "./src/domain/*"
+         ],
+         "@infrastructure/*": [
+            "./src/infrastructure/*"
+         ],
+         "@test/*": [
+            "./test/*"
+         ]
+      }
+   }
+}
