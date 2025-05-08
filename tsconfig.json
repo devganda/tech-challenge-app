@@ -27,9 +27,12 @@
          "@infrastructure/*": [
             "./src/infrastructure/*"
          ],
+         "@routes/*": [
+            "./src/routes/*"
+         ],
          "@test/*": [
             "./test/*"
-         ]
+         ],
       }
    }
 }
