@@ -1,5 +1,5 @@
 import Fastify from 'fastify';
-//import userRoutes from './routes/user.route';
+import UserRoute from '@routes/UserRoute';
 import dotenv from 'dotenv';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
@@ -19,7 +19,12 @@ export async function startServer() {
             version: '1.0.0'
          },
          host: 'localhost:3000',
-         schemes: ['http']
+         schemes: ['http'],
+         consumes: ['application/json'],
+         produces: ['application/json'],
+         tags: [
+            { name: 'Users', description: 'Operações relacionadas aos usuários' }
+         ],
       }
    });
 
@@ -35,9 +40,9 @@ export async function startServer() {
       await Redis.set('welcome', 'Hello teach challenge!')
       const message = await Redis.get('welcome')
       return { message }
-   })
+   });
 
-   //app.register(userRoutes, { prefix: '/users' });
+   app.register(UserRoute, { prefix: '/users' });
 
    /*disconecta o Prisma quando o servidor for fechado*/
    app.addHook('onClose', async () => {
