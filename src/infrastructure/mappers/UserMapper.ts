@@ -11,9 +11,16 @@ interface RawUser {
    createdAt: Date;
 }
 
+interface HttpUser {
+   id: string;
+   name: string;
+   email: string;
+   createdAt: string;
+}
+
 export class UserMapper {
 
-   static toHTTP(user: User) {
+   static toHTTP(user: User): HttpUser {
       return {
          id: user.id,
          name: user.name.getValue(),
