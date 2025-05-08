@@ -10,13 +10,6 @@ interface UserProps {
    createdAt: CreatedAt;
 }
 
-interface UserRestoreProps {
-   id: string;
-   name: string;
-   email: string;
-   createdAt: Date;
-}
-
 export class User {
 
    constructor(
@@ -45,15 +38,6 @@ export class User {
          name: new Name(name),
          email: new Email(email),
          createdAt: CreatedAt.now()
-      });
-   }
-
-   static restore(props: UserRestoreProps): User {
-      return new User({
-         id: props.id,
-         name: new Name(props.name),
-         email: new Email(props.email),
-         createdAt: new CreatedAt(props.createdAt)
       });
    }
 
