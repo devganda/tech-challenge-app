@@ -15,18 +15,25 @@ model User {
   updateAt  DateTime @updatedAt
 }
 
+model Category {
+  id       String    @id @default(uuid())
+  name     String
+  products Product[]
+}
+
 model Product {
   id          String      @id @default(uuid())
   name        String
   description String
   price       Decimal
-  category    String
+  categoryId  String?
   OrderItem   OrderItem[]
+  Category    Category?   @relation(fields: [categoryId], references: [id])
 }
 
 model Customer {
   id    String  @id @default(uuid())
-  cpf   String?
+  cpf   String? @unique
   name  String?
   email String?
   Order Order[]
