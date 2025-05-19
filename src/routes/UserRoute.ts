@@ -1,7 +1,7 @@
 import { FastifyInstance } from 'fastify';
 import { CreateUser } from '@application/use-cases/CreateUser';
 import { PrismaUserRepository } from '@infrastructure/repositories/PrismaUserRepository';
-import { UserMapper } from '../infrastructure/mappers/UserMapper';
+import { UserMapper } from '@infrastructure/mappers/UserMapper';
 
 export default async function UserRoute(app: FastifyInstance) {
    const userRepository = new PrismaUserRepository();
