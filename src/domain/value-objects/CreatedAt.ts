@@ -28,6 +28,6 @@ export class CreatedAt {
    }
 
    equals(other: CreatedAt): boolean {
-      return this.value.getTime() === other.value.getTime();
+      return this.value.getTime() === other.getValue().getTime();
    }
 }
