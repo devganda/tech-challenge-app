@@ -28,7 +28,12 @@ export async function startServer() {
          consumes: ['application/json'],
          produces: ['application/json'],
          tags: [
-            { name: 'Users', description: 'Operações relacionadas aos usuários' }
+            { name: 'Users', description: 'Operações relacionadas aos usuários' },
+            { name: 'Customers', description: 'Operações relacionadas aos clientes' },
+            { name: 'Products', description: 'Operações relacionadas aos produtos' },
+            { name: 'Orders', description: 'Operações relacionadas aos pedidos' },
+            { name: 'Admin', description: 'Operações administrativas' },
+            { name: 'Payment', description: 'Operações relacionadas aos pagamentos' },
          ],
       }
    });
